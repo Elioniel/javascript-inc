@@ -5,6 +5,12 @@ import Clicker from './clickerComponent/clicker';
 import logo from '.././assets/JavaScript-INC.svg';
 import '.././css/App.css';
 
+import store from "./redux/store/index";
+import { addIncome } from "./redux/actions/index";
+// 
+// window.store = store;
+// window.addIncome = addIncome;
+
 class App extends Component {
   render() {
     return (

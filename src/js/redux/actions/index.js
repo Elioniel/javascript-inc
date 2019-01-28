@@ -1,5 +1,5 @@
 import { ADD_INCOME } from "../constants/action-types";
 
-export function addWorker(payload) {
+export function addIncome(payload) {
   return { type: ADD_INCOME, payload }
 };
