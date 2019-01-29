@@ -21,8 +21,8 @@ class WorkersRaw extends Component {
       this.props.dispatch(payClicks(this.state.cost));
       this.props.dispatch(addIncome(this.state.income * this.state.multiplicator));
       this.setState({
-        multiplicator : this.state.multiplicator *= 2,
-        cost : Math.floor(this.state.cost *= 1.75),
+        multiplicator : this.state.multiplicator * 2,
+        cost : Math.floor(this.state.cost * 1.75),
       });
       console.log(this.state);
     }

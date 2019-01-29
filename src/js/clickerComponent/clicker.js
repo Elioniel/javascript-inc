@@ -25,8 +25,8 @@ class Clicked extends Component {
     if (this.props.clicks >= this.state.cost) {
       this.props.dispatch(payClicks(this.state.cost));
       this.setState({
-        cost : Math.floor(this.state.cost *= 1.75),
-        multiplicator : this.state.multiplicator *= 2
+        cost : Math.floor(this.state.cost * 1.75),
+        multiplicator : this.state.multiplicator * 2
       });
       console.log(this.state);
     }
