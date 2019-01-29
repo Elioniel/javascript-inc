@@ -5,12 +5,11 @@ import Clicker from '../clickerComponent/clicker'
 class Workers extends Component {
   constructor(props) {
     super(props);
-    this.data = new Clicker();
     this.state = {
       income : 1,
-      multiplicator : this.data.state.multiplicator,
-      time : this.data.state.time,
-      start : this.data.state.start,
+      // multiplicator : this.data.state.multiplicator,
+      // time : this.data.state.time,
+      // start : this.data.state.start,
       cost : 100
     };
 
@@ -27,7 +26,7 @@ class Workers extends Component {
     })
     this.timer = setInterval(() => this.setState({
       time: Date.now() - this.state.start,
-      clicks : this.data.state.clicks += this.data.state.income,
+      // clicks : this.data.state.clicks += this.data.state.income,
     }), 500);
   }
 
@@ -46,7 +45,7 @@ class Workers extends Component {
       this.setState({
         clicks : this.data.state.clicks -= this.state.cost,
         multiplicator : this.state.multiplicator *= 2,
-        income : this.data.state.income += (this.state.income *= this.state.multiplicator),
+        // income : this.data.state.income += (this.state.income *= this.state.multiplicator),
         cost : Math.floor(this.state.cost *= 1.75),
       });
     }

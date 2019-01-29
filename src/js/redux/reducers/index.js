@@ -1,18 +1,25 @@
 import { ADD_INCOME } from "../constants/action-types";
+import { ADD_CLICKS } from "../constants/action-types";
+import { PAY_CLICKS } from "../constants/action-types";
 
 const initialState = {
-  clicks : 100000,
+  clicks : 0,
   incomes : 0,
-  income : 0,
-  multiplicator : 1,
   time : 0,
-  start : 0,
-  cost : 50
+  start : 0
 };
 
 function rootReducer(state = initialState, action) {
   if (action.type === ADD_INCOME) {
       state.income += action.payload;
+    return Object.assign({}, state);
+  }
+  if (action.type === ADD_CLICKS) {
+      state.clicks += action.payload;
+    return Object.assign({}, state);
+  }
+  if (action.type === PAY_CLICKS) {
+      state.clicks -= action.payload;
     return Object.assign({}, state);
   }
   return state;

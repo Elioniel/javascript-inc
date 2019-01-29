@@ -1,37 +1,34 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 
-import Workers from '../workersComponent/worker'
+import { addClicks } from "../redux/actions/index";
+import { payClicks } from "../redux/actions/index";
 
-class Clicker extends Component {
+import Workers from '../workersComponent/worker';
+
+class Clicked extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      clicks : 100000,
-      incomes : 0,
+      income : 10,
       multiplicator : 1,
-      time : 0,
-      start : 0,
-      income : 0,
       cost : 50
     };
   }
 
-  componentDidMount () {
-    console.log(this.state);
-  }
-
   addMoney = () => {
-    this.setState({clicks : this.state.clicks + (1 * this.state.multiplicator)});
+    let click = this.state.income * this.state.multiplicator;
+    this.props.dispatch(addClicks(click));
   }
 
   upgradeClick = () => {
-    if (this.state.clicks >= this.state.cost) {
+    if (this.props.clicks >= this.state.cost) {
+      this.props.dispatch(payClicks(this.state.cost));
       this.setState({
-        clicks : this.state.clicks -= this.state.cost,
         cost : Math.floor(this.state.cost *= 1.75),
         multiplicator : this.state.multiplicator *= 2
       });
+      console.log(this.state);
     }
     else {
       return;
@@ -43,7 +40,7 @@ class Clicker extends Component {
       <div className="game">
         <div className="clicker">
           <div className="centered counter">
-            {this.state.clicks}
+            {this.props.clicks}
           </div>
           <div className="centered">
             <button className="click" onClick={this.addMoney}>Click me !</button>
@@ -59,5 +56,15 @@ class Clicker extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  console.log('state', state);
+  return {
+    clicks: state.clicks,
+    incomes: state.incomes
+  };
+}
+
+const Clicker = connect(mapStateToProps)(Clicked);
 
 export default Clicker;
