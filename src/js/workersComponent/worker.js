@@ -1,53 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 
-import Clicker from '../clickerComponent/clicker'
+import { payClicks } from "../redux/actions/index";
+import { addIncome } from "../redux/actions/index";
 
-class Workers extends Component {
+import Timer from '../timerComponent/timer';
+
+class WorkersRaw extends Component {
   constructor(props) {
     super(props);
     this.state = {
       income : 1,
-      // multiplicator : this.data.state.multiplicator,
-      // time : this.data.state.time,
-      // start : this.data.state.start,
+      multiplicator : 1,
       cost : 100
     };
-
-    this.startTimer = this.startTimer.bind(this)
-    this.stopTimer = this.stopTimer.bind(this)
-    this.resetTimer = this.resetTimer.bind(this)
-  }
-
-  startTimer = () => {
-    this.setState({
-      isOn: true,
-      time: this.state.time,
-      start: Date.now() - this.state.time
-    })
-    this.timer = setInterval(() => this.setState({
-      time: Date.now() - this.state.start,
-      // clicks : this.data.state.clicks += this.data.state.income,
-    }), 500);
-  }
-
-  stopTimer = () => {
-    this.setState({isOn: false});
-    clearInterval(this.timer);
-  }
-
-  resetTimer = () => {
-    this.setState({time: 0, isOn: false});
   }
 
   upgradeWorker = () => {
-    console.log(this.data.state, this.data.state.income);
-    if (this.data.state.clicks >= this.data.state.cost) {
+    if (this.props.clicks >= this.state.cost) {
+      this.props.dispatch(payClicks(this.state.cost));
+      this.props.dispatch(addIncome(this.state.income * this.state.multiplicator));
       this.setState({
-        clicks : this.data.state.clicks -= this.state.cost,
         multiplicator : this.state.multiplicator *= 2,
-        // income : this.data.state.income += (this.state.income *= this.state.multiplicator),
         cost : Math.floor(this.state.cost *= 1.75),
       });
+      console.log(this.state);
     }
     else {
       return;
@@ -55,20 +32,32 @@ class Workers extends Component {
   }
 
   componentDidMount = () => {
-    this.startTimer();
-  }
 
-  componentWillUnmount = () => {
-    this.stopTimer();
   }
 
   render() {
+
+    let timer = null;
+    if (this.props.incomes !== 0) {
+      timer = <Timer />
+    }
+
     return (
           <div>
+            {timer}
             <button className="click upgrade" onClick={this.upgradeWorker}> Upgrade the worker ({this.state.cost}) !</button>
           </div>
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    clicks: state.clicks,
+    incomes: state.incomes
+  };
+}
+
+const Workers = connect(mapStateToProps)(WorkersRaw);
 
 export default Workers;
