@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Clicker from './clickerComponent/clicker';
+import Upgrades from './upgradesComponent/upgrades';
 
 import logo from '.././assets/JavaScript-INC.svg';
 import '.././css/App.css';
@@ -17,6 +18,7 @@ class App extends Component {
       <div className="App">
         <div className="logo"><img alt="The app logo" src={logo} /></div>
         <Clicker />
+        <Upgrades />
       </div>
     );
   }

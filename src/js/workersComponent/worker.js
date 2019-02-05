@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { Button } from "react-materialize";
 
 import { payClicks } from "../redux/actions/index";
 import { addIncome } from "../redux/actions/index";
@@ -45,7 +46,7 @@ class WorkersRaw extends Component {
     return (
           <div>
             {timer}
-            <button className="click upgrade" onClick={this.upgradeWorker}> Upgrade the worker ({this.state.cost}) !</button>
+            <Button large className="white" onClick={this.upgradeWorker}> Upgrade the worker ({this.state.cost}) !</Button>
           </div>
     );
   }
@@ -54,7 +55,8 @@ class WorkersRaw extends Component {
 function mapStateToProps(state) {
   return {
     clicks: state.clicks,
-    incomes: state.incomes
+    incomes: state.incomes,
+    totalWorkersNumber: state.totalWorkersNumber
   };
 }
 

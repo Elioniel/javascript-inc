@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { Button } from "react-materialize";
 
 import { addClicks } from "../redux/actions/index";
 import { payClicks } from "../redux/actions/index";
@@ -43,12 +44,12 @@ class Clicked extends Component {
             {this.props.clicks}
           </div>
           <div className="centered">
-            <button className="click" onClick={this.addMoney}>Click me !</button>
+            <Button large className="white" onClick={this.addMoney}>Click me !</Button>
           </div>
         </div>
         <div className="flex">
           <div>
-            <button className="click upgrade" onClick={this.upgradeClick}> Upgrade the click ({this.state.cost}) !</button>
+            <Button large className="white" onClick={this.upgradeClick}> Upgrade the click ({this.state.cost}) !</Button>
           </div>
           <Workers />
         </div>
@@ -61,7 +62,8 @@ function mapStateToProps(state) {
   console.log('state', state);
   return {
     clicks: state.clicks,
-    incomes: state.incomes
+    incomes: state.incomes,
+    totalWorkersNumber: state.totalWorkersNumber
   };
 }
 
