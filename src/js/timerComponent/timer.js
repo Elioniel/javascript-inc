@@ -26,9 +26,8 @@ class TimerRaw extends Component {
       this.setState({
         time: Date.now() - this.state.start,
       })
-      console.log(this.state);
       this.props.dispatch(addClicks(this.props.incomes));
-    }, 500);
+    }, this.props.tick);
   }
 
   stopTimer = () => {
@@ -57,7 +56,8 @@ class TimerRaw extends Component {
 
 function mapStateToProps(state) {
   return {
-    incomes: state.incomes
+    incomes: state.incomes,
+    tick: state.tick
   };
 }
 

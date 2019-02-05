@@ -1,6 +1,6 @@
 # This are the futures addition i'm working on
 
-* Upgrades
+* Upgrades OK
 
 * Achievements
 
