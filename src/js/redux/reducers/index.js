@@ -20,7 +20,7 @@ function rootReducer(state = initialState, action) {
       return {...state};
 
     case ADD_CLICKS:
-      state.clicks += action.payload;
+      state.clicks += (action.payload * state.multiplier);
       return {...state};
 
     case ADD_WORKER:

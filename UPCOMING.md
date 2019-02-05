@@ -2,7 +2,7 @@
 
 * Upgrades OK
 
-* Achievements
+* Achievements OK
 
 * Rebirth
 

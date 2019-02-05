@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { Button, SideNav, SideNavItem } from "react-materialize"
 
+import Achievements from '../achievementsComponent/achievements';
+
 import { payClicks } from "../redux/actions/index";
 import { addMultip } from "../redux/actions/index";
 import { redTick } from "../redux/actions/index";
@@ -38,7 +40,7 @@ class UpgradesRaw extends Component {
   }
 
   quicken = () => {
-    if (this.props.clicks >= this.state.quicken.cost) {
+    if ((this.props.clicks >= this.state.quicken.cost) && this.props.tick >=100) {
       this.props.dispatch(payClicks(this.state.quicken.cost));
       this.setState({
         cost : Math.floor(this.state.quicken.cost * 15),
@@ -61,6 +63,7 @@ class UpgradesRaw extends Component {
         <SideNavItem divider />
         <SideNavItem subheader>Already Buyed</SideNavItem>
         <SideNavItem waves icon='query_builder' >The right to play</SideNavItem>
+        <Achievements />
       </SideNav>
     );
   }
