@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { Button, SideNav, SideNavItem } from "react-materialize"
 
-import Achievements from '../achievementsComponent/achievements';
-
 import { payClicks } from "../redux/actions/index";
 import { addMultip } from "../redux/actions/index";
 import { redTick } from "../redux/actions/index";
+
+import Achievements from '../achievementsComponent/achievements';
+import numberFit from '../utils/numberFit';
 
 class UpgradesRaw extends Component {
   constructor(props) {
@@ -55,11 +56,11 @@ class UpgradesRaw extends Component {
 
   render() {
     return (
-      <SideNav trigger={<Button floating className='white' waves='light' icon="keyboard_arrow_left" style={{position: 'absolute',bottom: '45px', right: '24px'}}></Button>} options={{ closeOnClick: true, edge: 'right' }}>
+      <SideNav trigger={<Button floating className='white' waves='light' icon="keyboard_arrow_left" style={{position: 'absolute',bottom: '45px', right: '24px'}}></Button>} options={{ closeOnClick: false, edge: 'right' }}>
         <SideNavItem subheader>Upgrades</SideNavItem>
         <SideNavItem waves icon='developer_mode'>Start developping</SideNavItem>
-        <SideNavItem waves icon='query_builder' onClick={ this.quicken }>Quicken the time ({this.state.quicken.cost})</SideNavItem>
-        <SideNavItem waves icon='plus_one' onClick={ this.multiply }>Multiply ({this.state.multiply.cost})</SideNavItem>
+        <SideNavItem waves icon='query_builder' onClick={ this.quicken }>Quicken the time ({numberFit(this.state.quicken.cost,2)})</SideNavItem>
+        <SideNavItem waves icon='plus_one' onClick={ this.multiply }>Multiply ({numberFit(this.state.multiply.cost,2)})</SideNavItem>
         <SideNavItem divider />
         <SideNavItem subheader>Already Buyed</SideNavItem>
         <SideNavItem waves icon='query_builder' >The right to play</SideNavItem>

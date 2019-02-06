@@ -6,6 +6,7 @@ import { payClicks } from "../redux/actions/index";
 import { addIncome } from "../redux/actions/index";
 
 import Timer from '../timerComponent/timer';
+import numberFit from '../utils/numberFit';
 
 class WorkersRaw extends Component {
   constructor(props) {
@@ -46,7 +47,7 @@ class WorkersRaw extends Component {
     return (
           <div>
             {timer}
-            <Button large className="white" onClick={this.upgradeWorker}> Upgrade the worker ({this.state.cost}) !</Button>
+            <Button large className="white" onClick={this.upgradeWorker}> Upgrade the worker ({numberFit(this.state.cost,2)}) !</Button>
           </div>
     );
   }

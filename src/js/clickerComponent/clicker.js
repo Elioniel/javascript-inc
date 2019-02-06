@@ -6,6 +6,7 @@ import { addClicks } from "../redux/actions/index";
 import { payClicks } from "../redux/actions/index";
 
 import Workers from '../workersComponent/worker';
+import numberFit from '../utils/numberFit';
 
 class Clicked extends Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class Clicked extends Component {
       <div className="game">
         <div className="clicker">
           <div className="centered counter">
-            {this.props.clicks}
+            {numberFit(this.props.clicks,2)}
           </div>
           <div className="centered">
             <Button large className="white" onClick={this.addMoney}>Click me !</Button>
@@ -49,7 +50,7 @@ class Clicked extends Component {
         </div>
         <div className="flex">
           <div>
-            <Button large className="white" onClick={this.upgradeClick}> Upgrade the click ({this.state.cost}) !</Button>
+            <Button large className="white" onClick={this.upgradeClick}> Upgrade the click ({numberFit(this.state.cost ,2)}) !</Button>
           </div>
           <Workers />
         </div>

@@ -29,6 +29,7 @@
 }
 
 .counter {
+  cursor: default;
   margin-top: 30px;
   margin-bottom: 30px;
   font-size: 26px;
@@ -58,4 +59,18 @@
 .white {
   color: black;
   text-transform: initial;
+}
+
+/******************************  Achievements *********************************/
+
+.cursorDis {
+  cursor: default;
+}
+
+.disabled {
+  background-color: #919191;
+}
+
+.acquire {
+  background-color: #ECCA46;
 }
