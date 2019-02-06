@@ -4,6 +4,7 @@ import { ADD_WORKER } from "../constants/action-types";
 import { ADD_MULTIP } from "../constants/action-types";
 import { RED_TICK } from "../constants/action-types";
 import { PAY_CLICKS } from "../constants/action-types";
+import { SEND_MESSAGE } from "../constants/action-types";
 
 const initialState = {
   clicks : 0,
@@ -37,6 +38,9 @@ function rootReducer(state = initialState, action) {
 
     case PAY_CLICKS:
       state.clicks -= action.payload;
+      return {...state};
+
+    case SEND_MESSAGE:
       return {...state};
 
     default:

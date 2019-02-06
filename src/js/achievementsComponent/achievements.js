@@ -14,7 +14,6 @@ class AchievementsRaw extends Component {
 
   componentDidMount = () => {
     this.disabled();
-    this.acquire();
   }
 
   disabled = () => {
@@ -27,7 +26,9 @@ class AchievementsRaw extends Component {
   acquire = () => {
     var tab = document.querySelectorAll('.acquire');
     for (var i = 0; i < tab.length; i++) {
-      tab[i].children[0].className = "acquire";
+      if (tab.length){
+        tab[i].children[0].className = "acquire";
+      }
     }
   }
 
@@ -36,7 +37,9 @@ class AchievementsRaw extends Component {
         <div id="achievements">
           <SideNavItem divider />
           <SideNavItem subheader>Achievements</SideNavItem>
-          <SideNavItem onChange={this.acquire()} className={this.props.clicks >= this.state.firstMilestone ? "acquire" : "disabled"} waves icon='developer_mode'>First milestone (get {numberFit(this.state.firstMilestone,0)})</SideNavItem>
+          <div onChange={this.acquire()}>
+            <SideNavItem className={this.props.clicks >= this.state.firstMilestone ? "acquire" : "disabled"} waves icon='developer_mode'>First milestone (get {numberFit(this.state.firstMilestone,0)})</SideNavItem>
+          </div>
         </div>
     );
   }

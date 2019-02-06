@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { Button } from "react-materialize";
 
+import { sendMessage } from "../redux/actions/index";
 import { addClicks } from "../redux/actions/index";
 import { payClicks } from "../redux/actions/index";
 
@@ -16,6 +17,10 @@ class Clicked extends Component {
       multiplicator : 1,
       cost : 50
     };
+  }
+
+  componentDidMount = () => {
+    this.props.dispatch(sendMessage("Bienvenue sur JavaScript Inc"));
   }
 
   addMoney = () => {

@@ -63,7 +63,7 @@ class UpgradesRaw extends Component {
         <SideNavItem waves icon='plus_one' onClick={ this.multiply }>Multiply ({numberFit(this.state.multiply.cost,2)})</SideNavItem>
         <SideNavItem divider />
         <SideNavItem subheader>Already Buyed</SideNavItem>
-        <SideNavItem waves icon='query_builder' >The right to play</SideNavItem>
+        <SideNavItem className="acquired" waves icon='query_builder'>The right to play</SideNavItem>
         <Achievements />
       </SideNav>
     );

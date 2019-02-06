@@ -4,6 +4,7 @@ import { ADD_WORKER } from "../constants/action-types";
 import { ADD_MULTIP } from "../constants/action-types";
 import { RED_TICK } from "../constants/action-types";
 import { PAY_CLICKS } from "../constants/action-types";
+import { SEND_MESSAGE } from "../constants/action-types";
 
 export function addIncome(payload) {
   return { type: ADD_INCOME, payload }
@@ -27,4 +28,8 @@ export function redTick(payload) {
 
 export function payClicks(payload) {
   return { type: PAY_CLICKS, payload }
+};
+
+export function sendMessage(payload) {
+  return { type: SEND_MESSAGE, payload }
 };
