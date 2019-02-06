@@ -22,15 +22,13 @@ class UpgradesRaw extends Component {
     };
   }
 
-  componentDidMount = () => {
-
-  }
-
   multiply = () => {
     if (this.props.clicks >= this.state.multiply.cost) {
       this.props.dispatch(payClicks(this.state.multiply.cost));
       this.setState({
-        cost : Math.floor(this.state.multiply.cost * 10),
+        multiply: {
+          cost : Math.floor(this.state.multiply.cost * 10),
+        }
       });
       this.props.dispatch(addMultip(2))
       console.log(this.state);
@@ -44,7 +42,9 @@ class UpgradesRaw extends Component {
     if ((this.props.clicks >= this.state.quicken.cost) && this.props.tick >=100) {
       this.props.dispatch(payClicks(this.state.quicken.cost));
       this.setState({
-        cost : Math.floor(this.state.quicken.cost * 15),
+        quicken: {
+          cost : Math.floor(this.state.quicken.cost * 15),
+        }
       });
       this.props.dispatch(redTick(50))
       console.log(this.state);

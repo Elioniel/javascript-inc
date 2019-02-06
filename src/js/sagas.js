@@ -3,7 +3,7 @@ import { put, takeEvery } from 'redux-saga/effects'
 function* sendMessage(action) {
   try {
     const message = action.payload;
-    yield window.Materialize.toast(message, 10000);
+    yield window.Materialize.toast(message, 3000);
     yield put({type: "SEND_MESSAGE_SUCCEEDED", message: message});
   }
   catch (e) {
