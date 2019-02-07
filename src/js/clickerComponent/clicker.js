@@ -20,7 +20,7 @@ class Clicked extends Component {
   }
 
   componentDidMount = () => {
-    this.props.dispatch(sendMessage("Bienvenue sur JavaScript Inc"));
+    this.props.dispatch(sendMessage("Welcome in JavaScript Inc"));
   }
 
   addMoney = () => {

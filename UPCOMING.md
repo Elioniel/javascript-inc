@@ -1,10 +1,12 @@
 # This are the futures addition i'm working on
 
-* Upgrades OK
-
-* Achievements OK
-
 * Rebirth
+
+* More workers
+
+* More upgrades
+
+* More achievements
 
 * Code snippets
 

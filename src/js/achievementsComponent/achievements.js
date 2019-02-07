@@ -17,7 +17,7 @@ class AchievementsRaw extends Component {
       },
       secondMilestone : {
         label: "Second Milestone",
-        cost: 1000000
+        cost: 10000000
       },
     };
   }
@@ -29,26 +29,34 @@ class AchievementsRaw extends Component {
   render() {
 
     var tab = document.querySelectorAll('li.disabled');
-    console.log(tab);
-    for (var i = 0; i < tab.length; i++) {
-      if (tab.length) {
-        tab[i].children[0].className = "disabled cursorDis";
+    // console.log(tab, 'tab');
+    for (let i = 0; i < tab.length; i++) {
+      if (tab.length > 0) {
+        for (let j = 0; j < tab[i].children.length; j++) {
+          if(tab[i].children.length > 0) {
+            tab[i].children[j].className = "disabled";
+          }
+        }
       }
     }
     var tabOK = document.querySelectorAll('li.acquire');
-    console.log(tabOK);
-    for (var j = 0; j < tabOK.length; j++) {
-      if (tabOK.length) {
-        tabOK[i].children[0].className = "acquire";
+    // console.log(tabOK, 'tabOK');
+    for (let k = 0; k < tabOK.length; k++) {
+      if (tabOK.length > 0) {
+        for (let l = 0; l < tabOK[k].children.length; l++) {
+          if(tabOK[k].children.length > 0) {
+            tabOK[k].children[l].className = "acquire";
+          }
+        }
       }
     }
 
     if(this.state.totalAcquired < tabOK.length) {
       this.props.dispatch(sendMessage("Achievement Unlocked"));
       this.setState({
-        totalAcquired : this.state.totalAcquired +1,
+        totalAcquired : this.state.totalAcquired + 1,
       });
-      console.log(this.state);
+      console.log(this.state, 'achievements');
     }
 
     return (
@@ -57,6 +65,7 @@ class AchievementsRaw extends Component {
           <SideNavItem subheader>Achievements</SideNavItem>
           <div>
             <SideNavItem className={this.props.clicks >= this.state.firstMilestone.cost ? "acquire" : "disabled"} waves icon='developer_mode'>{this.state.firstMilestone.label} (get {numberFit(this.state.firstMilestone.cost,0)})</SideNavItem>
+            <SideNavItem className={this.props.clicks >= this.state.secondMilestone.cost ? "acquire" : "disabled"} waves icon='aspect_ratio'>{this.state.secondMilestone.label} (get {numberFit(this.state.secondMilestone.cost,0)})</SideNavItem>
           </div>
         </div>
     );
