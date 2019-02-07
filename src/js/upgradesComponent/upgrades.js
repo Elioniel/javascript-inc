@@ -37,10 +37,10 @@ class UpgradesRaw extends Component {
         }
       });
       this.props.dispatch(addMultip(2))
-      console.log(this.state, "multip");
+      // console.log(this.state, "multip");
     }
     else {
-      console.log(this.state, "Rmultip");
+      // console.log(this.state, "Rmultip");
       return;
     }
   }
@@ -56,10 +56,10 @@ class UpgradesRaw extends Component {
         }
       });
       this.props.dispatch(redTick(50))
-      console.log(this.state, "quick");
+      // console.log(this.state, "quick");
     }
     else {
-      console.log(this.state, "Rquick");
+      // console.log(this.state, "Rquick");
       return;
     }
   }
@@ -83,9 +83,9 @@ class UpgradesRaw extends Component {
     if(info) {
       info.className = "hidden";
     }
-    console.log(dest, "2");
-    console.log(qui, "2");
-    console.log(info, "2");
+    // console.log(dest, "2");
+    // console.log(qui, "2");
+    // console.log(info, "2");
     return (
       <SideNav trigger={<Button floating className='white' waves='light' icon="keyboard_arrow_left" style={{position: 'absolute',bottom: '45px', right: '24px'}}></Button>} options={{ closeOnClick: false, edge: 'right' }}>
         <div className="available">

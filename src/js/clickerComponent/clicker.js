@@ -57,7 +57,7 @@ class Clicked extends Component {
           <div>
             <Button large className="white" onClick={this.upgradeClick}> Upgrade the click ({numberFit(this.state.cost ,2)}) !</Button>
           </div>
-          <Workers />
+          <Workers incomes={this.props.incomes} />
         </div>
       </div>
     );
@@ -65,7 +65,7 @@ class Clicked extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log('state', state);
+  // console.log('state', state);
   return {
     clicks: state.clicks,
     incomes: state.incomes,
