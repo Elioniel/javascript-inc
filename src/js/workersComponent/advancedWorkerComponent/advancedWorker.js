@@ -6,13 +6,13 @@ import { payClicks } from "../../redux/actions/index";
 import { addIncome } from "../../redux/actions/index";
 import numberFit from '../../utils/numberFit';
 
-class BasicWorkerRaw extends Component {
+class AdvancedWorkerRaw extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      income : 1,
+      income : 100,
       multiplicator : 1,
-      cost : 100,
+      cost : 5000,
       number : 0
     };
   }
@@ -37,7 +37,7 @@ class BasicWorkerRaw extends Component {
 
     return (
       <div className="col s12 m6 l4">
-        <Button className="white bouton" large onClick={this.upgradeWorker}>Basic worker ({numberFit(this.state.cost,2)}) ({numberFit(this.state.number,1)})</Button>
+        <Button className="white bouton" large onClick={this.upgradeWorker}>Advanced worker ({numberFit(this.state.cost,2)}) ({numberFit(this.state.number,1)})</Button>
       </div>
     );
   }
@@ -51,6 +51,6 @@ function mapStateToProps(state) {
   };
 }
 
-const BasicWorker = connect(mapStateToProps)(BasicWorkerRaw);
+const AdvancedWorker = connect(mapStateToProps)(AdvancedWorkerRaw);
 
-export default BasicWorker;
+export default AdvancedWorker;

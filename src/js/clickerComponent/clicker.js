@@ -44,18 +44,22 @@ class Clicked extends Component {
 
   render() {
     return (
-      <div className="game">
-        <div className="clicker">
-          <div className="centered counter">
+      <div className="col s12">
+        <div className="col s12">
+          <div className="col s12">
+            <div className="col s12 m6 l4 offset-l4 offset-m4 centered counter">
             {numberFit(this.props.clicks,2)}
+            </div>
           </div>
-          <div className="centered">
+          <div className="col s12">
+            <div className="col s12 m6 l4  offset-l4 offset-m4 centered">
             <Button large className="white" onClick={this.addMoney}>Click me !</Button>
+            </div>
           </div>
         </div>
-        <div className="flex">
-          <div>
-            <Button large className="white" onClick={this.upgradeClick}> Upgrade the click ({numberFit(this.state.cost ,2)}) !</Button>
+        <div className="col s12 workers">
+          <div className="col s12 m6 l4">
+            <Button large className="white bouton" onClick={this.upgradeClick}>Up the click ({numberFit(this.state.cost ,2)})</Button>
           </div>
           <Workers incomes={this.props.incomes} />
         </div>

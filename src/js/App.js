@@ -16,8 +16,8 @@ import '.././css/App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="logo"><img alt="The app logo" src={logo} /></div>
+      <div className="App row">
+        <div className="logo col s12"><img className="col s12 m6 offset-m4 l4 offset-l4" alt="The app logo" src={logo} /></div>
         <Clicker />
         <Upgrades />
       </div>

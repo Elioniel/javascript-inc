@@ -87,7 +87,7 @@ class UpgradesRaw extends Component {
     // console.log(qui, "2");
     // console.log(info, "2");
     return (
-      <SideNav trigger={<Button floating className='white' waves='light' icon="keyboard_arrow_left" style={{position: 'absolute',bottom: '45px', right: '24px'}}></Button>} options={{ closeOnClick: false, edge: 'right' }}>
+      <SideNav trigger={<Button floating className='white' waves='light' icon="keyboard_arrow_left" style={{position: 'fixed',bottom: '45px', right: '24px'}}></Button>} options={{ closeOnClick: false, edge: 'right' }}>
         <div className="available">
           <SideNavItem subheader>Upgrades</SideNavItem>
           <SideNavItem waves icon='developer_mode'>Start developping</SideNavItem>
