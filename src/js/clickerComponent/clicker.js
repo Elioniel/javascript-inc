@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { Button } from "react-materialize";
 
+import { saveGame } from '../redux/actions/index'
 import { sendMessage } from "../redux/actions/index";
 import { addClicks } from "../redux/actions/index";
 import { payClicks } from "../redux/actions/index";
@@ -21,6 +22,14 @@ class Clicked extends Component {
 
   componentDidMount = () => {
     this.props.dispatch(sendMessage("Welcome in JavaScript Inc"));
+    this.Save = setInterval(() => {
+      try {
+        this.props.dispatch(saveGame(this.props.state));
+      }
+      catch (e) {
+        console.log(e);
+      }
+    }, 30000);
   }
 
   addMoney = () => {
@@ -73,7 +82,8 @@ function mapStateToProps(state) {
   return {
     clicks: state.clicks,
     incomes: state.incomes,
-    totalWorkersNumber: state.totalWorkersNumber
+    totalWorkersNumber: state.totalWorkersNumber,
+    state: state
   };
 }
 
