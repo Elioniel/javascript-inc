@@ -1,6 +1,8 @@
 import { ADD_INCOME } from "../constants/action-types";
 import { ADD_CLICKS } from "../constants/action-types";
-import { ADD_WORKER } from "../constants/action-types";
+import { ADD_CLICK_UPGRADE } from "../constants/action-types";
+import { ADD_BASIC_WORKER } from "../constants/action-types";
+import { ADD_ADVANCED_WORKER } from "../constants/action-types";
 import { ADD_MULTIP } from "../constants/action-types";
 import { ADD_BITCOIN } from "../constants/action-types";
 import { RED_TICK } from "../constants/action-types";
@@ -17,8 +19,16 @@ export function addClicks(payload) {
   return { type: ADD_CLICKS, payload }
 };
 
-export function addWorker(payload) {
-  return { type: ADD_WORKER, payload }
+export function addClickUpgrade(payload) {
+  return { type: ADD_CLICK_UPGRADE, payload }
+};
+
+export function addBasicWorker(payload) {
+  return { type: ADD_BASIC_WORKER, payload }
+};
+
+export function addAdvancedWorker(payload) {
+  return { type: ADD_ADVANCED_WORKER, payload }
 };
 
 export function addMultip(payload) {
