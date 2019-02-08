@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { connect } from "react-redux";
 
-import { addClicks } from "../redux/actions/index";
+import { addClicks } from "../../redux/actions/index";
 
 class TimerRaw extends Component {
   constructor(props) {

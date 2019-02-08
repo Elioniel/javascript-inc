@@ -35,7 +35,7 @@ class Clicked extends Component {
         cost : Math.floor(this.state.cost * 1.75),
         multiplicator : this.state.multiplicator * 2
       });
-      console.log(this.state);
+      console.log(this.state, "upgradeClick");
     }
     else {
       return;

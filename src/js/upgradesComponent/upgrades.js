@@ -6,7 +6,7 @@ import { payClicks } from "../redux/actions/index";
 import { addMultip } from "../redux/actions/index";
 import { redTick } from "../redux/actions/index";
 
-import Achievements from '../achievementsComponent/achievements';
+import Achievements from './achievementsComponent/achievements';
 import numberFit from '../utils/numberFit';
 
 class UpgradesRaw extends Component {

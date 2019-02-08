@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Timer from '../timerComponent/timer';
+import Timer from './timerComponent/timer';
 import BasicWorker from './basicWorkerComponent/basicWorker';
 import AdvancedWorker from './advancedWorkerComponent/advancedWorker';
 

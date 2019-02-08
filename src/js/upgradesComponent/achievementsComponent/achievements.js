@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { SideNavItem } from "react-materialize"
 
-import numberFit from '../utils/numberFit';
+import numberFit from '../../utils/numberFit';
 
-import { sendMessage } from "../redux/actions/index";
+import { sendMessage } from "../../redux/actions/index";
 
 class AchievementsRaw extends Component {
   constructor(props) {
