@@ -9,6 +9,8 @@ import { RED_TICK } from "../constants/action-types";
 import { PAY_CLICKS } from "../constants/action-types";
 import { SEND_MESSAGE } from "../constants/action-types";
 import { REBIRTH } from "../constants/action-types";
+import { ACHIEVE } from "../constants/action-types";
+import { UPGRADE } from "../constants/action-types";
 import { SAVE_GAME } from "../constants/action-types";
 
 export function addIncome(payload) {
@@ -53,6 +55,14 @@ export function sendMessage(payload) {
 
 export function rebirth(payload) {
   return { type: REBIRTH, payload }
+};
+
+export function achieve(payload) {
+  return { type: ACHIEVE, payload }
+};
+
+export function upgrade(payload) {
+  return { type: UPGRADE, payload }
 };
 
 export function saveGame(payload) {

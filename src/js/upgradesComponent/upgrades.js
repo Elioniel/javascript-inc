@@ -83,9 +83,6 @@ class UpgradesRaw extends Component {
     if(info) {
       info.className = "hidden";
     }
-    // console.log(dest, "2");
-    // console.log(qui, "2");
-    // console.log(info, "2");
     return (
       <SideNav trigger={<Button floating className='white' waves='light' icon="keyboard_arrow_left" style={{position: 'fixed',bottom: '45px', right: '24px'}}></Button>} options={{ closeOnClick: false, edge: 'right' }}>
         <div className="available">
@@ -109,7 +106,8 @@ function mapStateToProps(state) {
   return {
     clicks: state.clicks,
     incomes: state.incomes,
-    tick: state.tick
+    tick: state.tick,
+    upg: state.upg
   };
 }
 

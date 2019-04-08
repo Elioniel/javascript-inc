@@ -9,4 +9,6 @@ export const RED_TICK = "RED_TICK";
 export const PAY_CLICKS = "PAY_CLICKS";
 export const SEND_MESSAGE = "SEND_MESSAGE";
 export const REBIRTH = "REBIRTH";
+export const ACHIEVE = "ACHIEVE";
+export const UPGRADE = "UPGRADE";
 export const SAVE_GAME = "SAVE_GAME";

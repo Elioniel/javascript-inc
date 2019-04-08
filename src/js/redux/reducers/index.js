@@ -9,6 +9,8 @@ import { RED_TICK } from "../constants/action-types";
 import { PAY_CLICKS } from "../constants/action-types";
 import { SEND_MESSAGE } from "../constants/action-types";
 import { REBIRTH } from "../constants/action-types";
+import { ACHIEVE } from "../constants/action-types";
+import { UPGRADE } from "../constants/action-types";
 import { SAVE_GAME } from "../constants/action-types";
 
 const inistate = {
@@ -20,6 +22,8 @@ const inistate = {
     basicWorkersNumber: 0,
     advancedWorkersNumber: 0,
     bitcoins : 0,
+    achievements : {},
+    upgrades : {},
     rebirth : 0
   };
 
@@ -71,6 +75,17 @@ function rootReducer(state = initialState, action) {
       state = initialState;
       state.bitcoins = bitcoin;
       state.restart = restart;
+      return {...state};
+
+    case ACHIEVE:
+      let act = action.payload;
+      state.achievements = {
+        ...state.achievements,
+        act
+      };
+      return {...state};
+
+    case UPGRADE:
       return {...state};
 
     case SAVE_GAME:
