@@ -11,6 +11,7 @@ import { saveGame } from '../redux/actions/index'
 import Workers from '../workersComponent/worker';
 import numberFit from '../utils/numberFit';
 
+//Classe du composant Clicked
 class Clicked extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +22,11 @@ class Clicked extends Component {
     };
   }
 
+  // Le composant c'est bien initialisé et est monté dans le DOM
   componentDidMount = () => {
+    //Envoyer le message de bienvenue
+    this.props.dispatch(sendMessage("Welcome in JavaScript Inc"));
+    // Si le nombre d'upgrade du click est supérieur ou égal à 1, remettre le multiplicateur du click
     if (this.props.clickUpgradeNumber >=1) {
       let cos = this.state.cost;
       for (let i = 1; i <= this.props.clickUpgradeNumber; i++) {
@@ -31,7 +36,7 @@ class Clicked extends Component {
         cost : cos
       });
     }
-    this.props.dispatch(sendMessage("Welcome in JavaScript Inc"));
+    // Lancer la routine de sauvegarde de l'état du jeu a un intérval défini a la fin du SetInterval
     this.Save = setInterval(() => {
       try {
         this.props.dispatch(saveGame(this.props.state));
@@ -42,11 +47,13 @@ class Clicked extends Component {
     }, 30000);
   }
 
+  // Ajoute des click au compte du jeu
   addMoney = () => {
     let click = this.state.income * (this.state.multiplicator * 2);
     this.props.dispatch(addClicks(click));
   }
 
+  // Améliore le click manuel pour le rendre plus efficace
   upgradeClick = () => {
     if (this.props.clicks >= this.state.cost) {
       this.props.dispatch(payClicks(this.state.cost));
@@ -62,6 +69,7 @@ class Clicked extends Component {
     }
   }
 
+  // Lance le rendu du jeu avec les parties du nombre de clicks, du bouton et de l'upgrade des clicks ainsi que les workers
   render() {
     return (
       <div className="col s12">

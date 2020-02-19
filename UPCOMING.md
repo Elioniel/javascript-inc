@@ -1,10 +1,12 @@
 # This are the futures addition i'm working on
 
-* persistence of upgrades
+* Persistence of upgrades
 
-* upgrades dissapear if completed
+* Upgrades dissapear if completed
 
-* achievement persistence
+* Achievement persistence
+
+* Multiple buy
 
 * Rebirth
 
@@ -21,3 +23,5 @@
 * React tutorial
 
 * A player
+
+# Released last patch :
