@@ -3,6 +3,7 @@ import { ADD_CLICKS } from "../constants/action-types";
 import { ADD_CLICK_UPGRADE } from "../constants/action-types";
 import { ADD_BASIC_WORKER } from "../constants/action-types";
 import { ADD_ADVANCED_WORKER } from "../constants/action-types";
+import { ADD_THIRD_WORKER } from "../constants/action-types";
 import { ADD_MULTIP } from "../constants/action-types";
 import { ADD_BITCOIN } from "../constants/action-types";
 import { RED_TICK } from "../constants/action-types";
@@ -49,6 +50,10 @@ function rootReducer(state = initialState, action) {
 
     case ADD_ADVANCED_WORKER:
       state.advancedWorkersNumber += action.payload;
+      return {...state};
+
+    case ADD_THIRD_WORKER:
+      state.thirdWorkersNumber += action.payload;
       return {...state};
 
     case ADD_MULTIP:

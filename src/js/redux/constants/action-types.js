@@ -3,6 +3,7 @@ export const ADD_CLICKS = "ADD_CLICKS";
 export const ADD_CLICK_UPGRADE = "ADD_CLICK_UPGRADE";
 export const ADD_BASIC_WORKER = "ADD_BASIC_WORKER"
 export const ADD_ADVANCED_WORKER = "ADD_ADVANCED_WORKER"
+export const ADD_THIRD_WORKER = "ADD_ADVANCED_WORKER"
 export const ADD_MULTIP = "ADD_MULTIP";
 export const ADD_BITCOIN = "ADD_BITCOIN";
 export const RED_TICK = "RED_TICK";
